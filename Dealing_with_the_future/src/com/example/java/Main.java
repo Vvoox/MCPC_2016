@@ -78,7 +78,7 @@ public class Main {
 
                                 index+=1;
                                 res="R";
-                                System.out.println(index+res);
+                                System.out.println(index+" "+res);
                             }
                         }
 
@@ -93,7 +93,7 @@ public class Main {
                                 index+=1;
                                 res="L";
 
-                                System.out.println(index+res);
+                                System.out.println(index+" "+res);
                             }
                         }
 
@@ -105,7 +105,7 @@ public class Main {
                 }
                 if(index==N-1){
 
-                    for(int j =N-1 ; j>0 ; j--){
+                    for(int j =N-2 ; j>0 ; j--){
 
                         if(value>future[j]){
 
@@ -115,7 +115,7 @@ public class Main {
                                 index+=1;
                                 res="L";
 
-                                System.out.println(index+res);
+                                System.out.println(index+" "+res);
                             }
                         }
                         else break;
@@ -123,15 +123,15 @@ public class Main {
                     }
                     for(int j =0; j<N ; j++){
 
-                        if(value1>future[j]){
+                        if(value>future[j]){
 
-                            value1=future[j];
+                            value=future[j];
 
                             if(j==N-1){
                                 index+=1;
                                 res="L";
 
-                                System.out.println(index+res);
+                                System.out.println(index+" "+res);
                             }
                         }
                         else break;
@@ -160,11 +160,9 @@ public class Main {
                                         if(l==index-1){
                                             index+=1;
                                             res="R";
-                                            System.out.println(index+res);
+                                            System.out.println(index+" "+res);
                                         }
                                     }
-
-
                                 }
                             }
                         }
