@@ -1,7 +1,6 @@
 package com.example.java;
 
 import java.util.Scanner;
-import java.util.function.Function;
 
 public class Main {
 
@@ -19,14 +18,13 @@ public class Main {
     for(int i=0 ; i<N ;i++){
 
         distance1[i]=dis.next();
-        distance[i]=Integer.parseInt(distance1[i]); }
+        distance[i]=Integer.parseInt(distance1[i]); } // input in one line , use string before int;
 
     sum(distance);
-    //fibo();
-        System.out.println(result);
+    System.out.println(result);
 
     }
-    public static void sum(int[] distance){
+    public static void sum(int[] distance){ // this function calculate the sum of all number and give the max , and after i use it to identify the size of table fibo;
 
        int max=0;
 
@@ -51,7 +49,7 @@ public class Main {
 
             if(i+2==max){ break;}
 
-            lfibo[i+2] = lfibo[i+1] + lfibo[i];
+            lfibo[i+2] = lfibo[i+1] + lfibo[i]; // here i use the max and create another arrays fib that contient just the number we need to combine with , we don't need to use the whole size;
             if(lfibo[i+2]>=max){break;}
 
 
@@ -73,7 +71,7 @@ public class Main {
 
             for(int j=i+1 ; j<N; j++){
 
-                for(int f=0 ; f<fibo.length ; f++){
+                for(int f=0 ; f<fibo.length ; f++){ // here and finally augment the result if we have sum of 2 number = some number in second fibo list
 
                     if(distance[i]+distance[j]==fibo[f]){
                         result+=1;
@@ -81,8 +79,6 @@ public class Main {
                 }
             }
         }
-
-
 
     }
 
