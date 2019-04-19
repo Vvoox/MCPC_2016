@@ -63,6 +63,7 @@ public class Main {
             if(future[i]==max){
 
                 index=i;
+
                 int value=max;
                 int value1=max;
 
@@ -70,7 +71,7 @@ public class Main {
 
                     for(int j =1 ; j<N ; j++){
 
-                        if(value<future[j]){
+                        if(value>future[j]){
 
                             value=future[j];
 
