@@ -6,7 +6,7 @@ public class Main {
     public static int T=0 , N=0 ;
     public static void main(String[] args) {
     System.out.println("Hello , we need to help to get a tours for visiting all cities if we could : ");
-    System.out.println("insert your input : ");
+    System.out.println("insert your input ");
     Scanner cs = new Scanner(System.in);
     Scanner nm = new Scanner(System.in);
     Scanner tb = new Scanner(System.in);
@@ -50,7 +50,7 @@ public class Main {
                 }
             }
         }
-       // System.out.println(max);
+        //System.out.println(max);
         condition(future,max);
     }
     public static void condition(int[] future , int max){
