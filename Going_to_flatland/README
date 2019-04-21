@@ -1,0 +1,3 @@
+#Going_to_flatland
+This problem consist of calculating the max between the cites , and this distance is the radius of the Ant circle , the way we can minimize the cost
+The idea is to calculate the max diffrence between cites and we diffise it on 2.
