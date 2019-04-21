@@ -34,38 +34,61 @@ public class Main {
 
     public static void future(String[] tab, int N){
 
-        String[] result1 = new String[2*N -1];
-        String[] result2 = new String[2*N-1];
+
         int l=0;
-        int index = 0;
 
-        for(int i=0 ; i < 2*N -1 ; i++) {
+        int lg = 2*N -1;
+        String[] result1 = new String[lg];
+        String[] result2 = new String[lg];
+        int max=0;
+        int index[] = new int[lg];
 
-                if (i + 1 == 2 * N - 1) {
+        for(int i=0 ; i < lg ; i++) {
+
+                if (i + 1 == lg) {
                     break;
                 }
 
-                for (int j = 0; j < 2 * N - 1; j++) {
+                for (int j = i+1 ; j < lg; j++) {
 
                     if(!tab[i].equals(tab[j])){
 
-                        index=1;
+                        index[i]+=1;
                     }
-                    else index=0;
+                    if( tab[i].equals(tab[j]))
+                        index[i]=0;
 
                 }
+                System.out.println();
+                for(int j=0 ; j<lg ; j++) {
 
-            if(index==1){
+                    if (max < index[i]) {
 
+                        max = index[i];
+
+                    }
+                }
+
+
+
+        }
+
+        for(int i=0 ; i<lg ; i++){
+
+            if(index[i]==max){
                 result1[i]=tab[i];
+
             }
-
         }
 
-        for(int i=0 ; i<2*N -1 ; i++ ){
+        //String[] final =new
+       // for(int i=0 ; i<lg ; i++ ){
 
-            System.out.println(result1[i]);
-        }
+            //result1[i].split("null");
+
+            //if(!result1.equals("null"))
+            //System.out.println(result1[i]);
+        //}
 
 
     }
