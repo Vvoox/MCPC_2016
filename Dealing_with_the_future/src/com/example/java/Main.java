@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static int T=0 , N=0 ;
     public static void main(String[] args) {
-    System.out.println("Hello , we need to help to get a tours for visiting all cities if we could : ");
+    System.out.println("Hello , we need to help to get a tours for visiting all cities (if it is possible) : ");
     System.out.println("insert your input ");
     Scanner cs = new Scanner(System.in);
     Scanner nm = new Scanner(System.in);
@@ -57,7 +57,7 @@ public class Main {
 
         int index =0 ;
         String direction =" ";
-        String res =" ";
+        String res ="NO";
         for(int i=0 ; i<N ; i++){
 
             if(future[i]==max){
@@ -71,7 +71,7 @@ public class Main {
 
                     for(int j =1 ; j<N ; j++){
 
-                        if(value>future[j]){
+                        if(value >= future[j]){
 
                             value=future[j];
 
@@ -86,7 +86,7 @@ public class Main {
                     }
                     for(int j = N-1; j>0 ; j--){
 
-                        if(value1>future[j]){
+                        if(value1 > future[j]){
 
                             value1=future[j];
 
@@ -99,16 +99,14 @@ public class Main {
                         }
 
                     }
-                    if (res == " ") {
 
-                        System.out.println("NO");
-                    }
                 }
+
                 if(index==N-1){
 
                     for(int j =N-2 ; j>0 ; j--){
 
-                        if(value>future[j]){
+                        if(value > future[j]){
 
                             value=future[j];
 
@@ -124,7 +122,7 @@ public class Main {
                     }
                     for(int j =0; j<N ; j++){
 
-                        if(value>future[j]){
+                        if(value > future[j]){
 
                             value=future[j];
 
@@ -138,16 +136,13 @@ public class Main {
                         else break;
 
                     }
-                    if (res == " ") {
 
-                        System.out.println("NO");
-                    }
                 }
                 if(0<index && index<N){
 
                     for(int j =index+1 ; j<N ; j++){
 
-                        if(value>future[j]){
+                        if(value > future[j]){
 
                             value=future[j];
 
@@ -155,7 +150,7 @@ public class Main {
 
                                 for(int l=0 ; l<index ; l++){
 
-                                    if(value>future[l]){
+                                    if(value > future[l]){
 
                                         value=future[l];
                                         if(l==index-1){
@@ -182,7 +177,7 @@ public class Main {
 
                                 for (int l = N - 1; l > index; l--) {
 
-                                    if (value1 > future[l]) {
+                                    if (value1 >= future[l]) {
 
                                         value1 = future[l];
 
@@ -201,81 +196,16 @@ public class Main {
                         else break;
 
                     }
-                    if (res == " ") {
-
-                        System.out.println("NO");
-                    }
                 }
+                else break;
 
-
-                /*for(int j=i; j< N ; j++){
-                    if(j+1==N){break;}
-
-                    if(value> future[j+1]){
-
-                        value= future[j+1];
-                        if(value==future[N-1]){
-                            for(int l=0;l< i ; l++){
-
-                                if(value> future[l]){
-                                    value=future[l];
-
-                                }
-                                //System.out.println(value);
-
-                                if(l==i-1){
-
-                                    System.out.println(index+" R");
-                                }
-                            }
-                        }
-                    }
-                    //System.out.println(value);
-                    /*if(value==future[N-1]){
-                        for(int l=0;l< i ; l++){
-
-                            if(value> future[l]){
-                                value=future[l];
-
-                            }
-                            //System.out.println(value);
-
-                            if(l==i-1){
-
-                                System.out.println(index+" R");
-                            }
-                        }
-                    }*/
-
-               /* }
-                for(int j=i; j> 0 ; j--) {
-                    if (j - 1 == 0) {
-                        break;
-                    }
-
-                    if (value > future[j - 1]) {
-
-                        value = future[j - 1];
-                        if (value == future[0]) {
-                            for (int l = N-1; l > i; l++) {
-
-                                if (value > future[l]) {
-                                    value = future[l];
-
-                                }
-                                //System.out.println(value);
-
-                                if (l == i + 1) {
-
-                                    System.out.println(index + " L");
-                                }
-                            }
-                        }
-                    }
-                }*/
 
             }
         }
+        if(res=="NO"){
+            System.out.println(res);
+        }
+
 
 
     }
