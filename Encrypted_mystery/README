@@ -1,0 +1,4 @@
+#Encrypted_mystery
+This program consist to know the encrypted messege in strings , therefore we need to know if the input sting is anti-symmetric or not by using 2 functions :
+Reverse and flip that allow us to know what we said before and also the substrings anti symmetric , our output is the number of anti-symmetric substrings.
+The ideas is simple , creating 2 methods modify the input string flip it after reverse it and calculate the number req .
