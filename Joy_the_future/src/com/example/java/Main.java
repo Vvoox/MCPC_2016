@@ -34,61 +34,53 @@ public class Main {
 
     public static void future(String[] tab, int N){
 
-
         int l=0;
 
         int lg = 2*N -1;
-        String[] result1 = new String[lg];
-        String[] result2 = new String[lg];
+       // String[] result1 = new String[lg];
+       // String[] result2 = new String[lg];
         int max=0;
         int index[] = new int[lg];
 
-        for(int i=0 ; i < lg ; i++) {
+        for(int i=0 ; i<lg ;i++){
 
-                if (i + 1 == lg) {
-                    break;
-                }
+            for(int j=0 ; j<lg ; j++){
 
-                for (int j = i+1 ; j < lg; j++) {
 
-                    if(!tab[i].equals(tab[j])){
+                if(i!=j){
 
-                        index[i]+=1;
-                    }
-                    if( tab[i].equals(tab[j]))
-                        index[i]=0;
 
-                }
-                System.out.println();
-                for(int j=0 ; j<lg ; j++) {
+                    if(tab[i].equals(tab[j])){
 
-                    if (max < index[i]) {
-
-                        max = index[i];
+                        index[i]=1;
+                        break;
 
                     }
+                    if(!tab[i].equals(tab[j])) index[i]=2;
                 }
-
-
-
-        }
-
-        for(int i=0 ; i<lg ; i++){
-
-            if(index[i]==max){
-                result1[i]=tab[i];
-
             }
         }
+        
+        for(int i=0 ; i<lg ; i++){
 
-        //String[] final =new
-       // for(int i=0 ; i<lg ; i++ ){
+            if(index[i]==2){
 
-            //result1[i].split("null");
+                max+=1;
+            }
+        }
+        String[] result1 = new String[max];
 
-            //if(!result1.equals("null"))
-            //System.out.println(result1[i]);
-        //}
+        for(int i=0 ; i<max ; i++){
+
+            if(index[i]==2){
+
+                result1[i]=tab[i];
+            }
+        }
+        for(int i=0 ; i<max ; i++){
+
+            System.out.println(result1[i]);
+        }
 
 
     }
