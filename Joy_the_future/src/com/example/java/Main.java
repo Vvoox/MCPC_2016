@@ -22,11 +22,7 @@ public class Main {
 
             tab1[j]=tb.nextLine();
         }
-        for(int l=0 ; l<2*N -1 ;l++){
 
-            System.out.println(tab1[l]);
-        }
-        System.out.println();
         future(tab1,N);
 
     }
@@ -37,8 +33,8 @@ public class Main {
         int l=0;
 
         int lg = 2*N -1;
-       // String[] result1 = new String[lg];
-       // String[] result2 = new String[lg];
+
+
         int max=0;
         int index[] = new int[lg];
 
@@ -60,7 +56,7 @@ public class Main {
                 }
             }
         }
-        
+
         for(int i=0 ; i<lg ; i++){
 
             if(index[i]==2){
@@ -70,11 +66,12 @@ public class Main {
         }
         String[] result1 = new String[max];
 
-        for(int i=0 ; i<max ; i++){
+        for(int i=0 ; i<lg ; i++){
 
             if(index[i]==2){
 
-                result1[i]=tab[i];
+                result1[l]=tab[i];
+                l++;
             }
         }
         for(int i=0 ; i<max ; i++){
