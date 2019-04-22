@@ -6,7 +6,7 @@ public class Main {
 
     public static int T=0 ;
     public static void main(String[] args) {
-    System.out.println("Hello , we need to knw the minimum of the string length ");
+    System.out.println("Hello , we need to know the minimum number of the string length ");
     System.out.println("Insert your input : ");
     Scanner cs = new Scanner(System.in);
     Scanner nm = new Scanner(System.in);
@@ -21,17 +21,13 @@ public class Main {
         int N=0 , M=0;
 
         for(int j=0 ; j<2 ; j++){
-
             tb[j]=nm.next();
             tb1[j]=Integer.parseInt(tb[j]);
-
         }
-
         N=tb1[0];
         M = tb1[1];
         String[] words=new String[N];
         String[] needs = new String[M];
-       // System.out.println(M);
 
         for(int j=0 ; j<N ;j++ ){
 
@@ -43,13 +39,7 @@ public class Main {
             needs[j]=words[j];
         }
 
-        for(int j=0 ; j<tb1[1] ;j++){
-
-            System.out.println(needs[j]);
-        }
-
         kool(needs,M);
-        //mat(needs);
     }
 
     }
@@ -61,7 +51,6 @@ public class Main {
         for(int i=0 ; i<len ; i++){
 
             leng[i]=tab[i].length();
-           // System.out.println(leng[i]);
 
         }
         for(int i =0 ; i<len ; i++){
@@ -70,22 +59,16 @@ public class Main {
                 maxl=leng[i];
             }
         }
-        String[] matrix[] = new String[len][maxl];
-        //System.out.println(maxl);
         int number = 0 ;
 
         for(int i=0 ; i < len ; i++) {
 
-           // for (int j = 0; j < maxl; j++) {
             if(i+1==len){break;}
 
             String[] sp1= tab[i].split("",0);
             String[] sp2=tab[i+1].split("",0);
             int lng1 = sp1.length , lng2= sp2.length;
             int index[]=new int[lng2];
-            int l=0;
-
-            int cnt=0;
 
             for(int j=0 ; j<lng1 ; j++){
 
@@ -103,10 +86,11 @@ public class Main {
                                 }
                             }
                         }
-                            if (sp1[j].equals(sp2[h])) {
+                        if (sp1[j].equals(sp2[h])) {
 
                                 index[h] = 2;
-                            }
+
+                        }
                     }
                     if(!sp1[j].equals(sp2[h])){
 
@@ -117,14 +101,18 @@ public class Main {
                     }
                 }
             }
-
             for(int j=0 ; j<lng2 ; j++){
 
-                System.out.print(index[j]+" ");
-            }
-            System.out.println();
+                    if(index[j]==1){
 
+                        for(int b =j ; b<lng2 ; b++){
 
+                            index[b]=1;
+                        }
+                        break;
+
+                    }
+                }
 
             for(int j=0 ; j<lng2 ; j++){
 
