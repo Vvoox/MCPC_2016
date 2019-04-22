@@ -31,6 +31,7 @@ public class Main {
         M = tb1[1];
         String[] words=new String[N];
         String[] needs = new String[M];
+       // System.out.println(M);
 
         for(int j=0 ; j<N ;j++ ){
 
@@ -71,6 +72,7 @@ public class Main {
         }
         String[] matrix[] = new String[len][maxl];
         //System.out.println(maxl);
+        int number = 0 ;
 
         for(int i=0 ; i < len ; i++) {
 
@@ -91,7 +93,20 @@ public class Main {
 
                     if(sp1[j].equals(sp2[h])){
 
-                            index[h] = 2;
+                        if(h==0 ){
+                            if(h+1==lng2){ break;}
+
+                            if(!sp1[j].equals(sp2[h+1])){
+
+                                for( int b=h+1 ; b<lng2 ; b++){
+                                    index[b]=1;
+                                }
+                            }
+                        }
+                            if (sp1[j].equals(sp2[h])) {
+
+                                index[h] = 2;
+                            }
                     }
                     if(!sp1[j].equals(sp2[h])){
 
@@ -108,10 +123,23 @@ public class Main {
                 System.out.print(index[j]+" ");
             }
             System.out.println();
-            
+
+
+
+            for(int j=0 ; j<lng2 ; j++){
+
+                if(index[j]==1){
+                    number+=1;
+                }
+            }
 
 
         }
+        int length = tab[0].length() + number;
+        System.out.println(length);
+
+
+
 
     }
     public static String[] mat(String tab){
